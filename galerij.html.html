@@ -1,0 +1,83 @@
+<!DOCTYPE html> 
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galerij van de Efteling attracties - Bekijk beelden van attracties zoals de Python, Fata Morgana, en het Sprookjesbos.">
+    <title>Galerij - Efteling</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .gallery {
+            display: flex;
+            gap: 20px;
+        }
+        figure {
+            text-align: center;
+        }
+        .active {
+            color: red; /* Kleur voor actieve link */
+        }
+        iframe {
+            border: none; /* Vervangt frameborder="0" */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://cdn.worldvectorlogo.com/logos/efteling-1.svg" alt="Efteling Logo" width="200" height="100">
+        <h1>Galerij van Efteling Attracties</h1>
+        <hr>
+        <nav aria-label="Hoofdmenu"> 
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="galerij.html" class="active">Galerij</a></li>
+                <li><a href="info.html">Info</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Galerij van de Efteling</h2>
+            <p>Bekijk hier enkele populaire attracties van de Efteling. Klik op een afbeelding om een video van de attractie te bekijken.</p>
+            <div class="gallery" role="region" aria-label="Attracties Galerij">
+                <figure>
+                    <img src="https://www.wonderlijkewcweb.org/attracties/sprookjesbos/fotos/introfoto_draak.jpg" alt="Sprookjesbos" id="sprookjesbos" width="200" height="150" style="cursor: pointer;" aria-labelledby="sprookjesbos-figcaption">
+                    <figcaption id="sprookjesbos-figcaption">Sprookjesbos</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://www.vakantievoortieners.nl/wp-content/uploads/python-efteling-achtbanen.jpg" alt="Python Achtbaan" id="python" width="200" height="150" style="cursor: pointer;" aria-labelledby="python-figcaption">
+                    <figcaption id="python-figcaption">Python Achtbaan</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://www.looopings.nl/img/foto/031018flags.jpg" alt="Fata Morgana" id="fata_morgana" width="200" height="150" style="cursor: pointer;" aria-labelledby="fata-morgana-figcaption">
+                    <figcaption id="fata-morgana-figcaption">Fata Morgana</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section>
+            <h3>Bekijk de video's</h3>
+            <iframe id="videoPlayer" width="560" height="315" allowfullscreen></iframe>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Efteling Toeristische Website</p>
+    </footer>
+
+    <script>
+        document.getElementById("sprookjesbos").addEventListener("click", function() {
+            document.getElementById("videoPlayer").src = "https://www.youtube.com/embed/_gFseNNGv4g?si=4AnUSFnh0nUJkNKA";
+        });
+
+        document.getElementById("python").addEventListener("click", function() {
+            document.getElementById("videoPlayer").src = "https://www.youtube.com/embed/mJ2KPMK6XwU";
+        });
+
+        document.getElementById("fata_morgana").addEventListener("click", function() {
+            document.getElementById("videoPlayer").src = "https://www.youtube.com/embed/mXdXR82IkvQ";
+        });
+    </script>
+</body>
+</html>
